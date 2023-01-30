@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        <div>
+            <div class="album py-5 bg-light">
+                <div class="container">
+    
+                    <div class="container-fluid">
+                        <br><h1>Éligibilité</h1><br><br>
+                        <p>
+                            Entrez les informations concernant votre entreprise dans notre simulateur afin de savoir si vous êtes éligible à notre programme de parrainage !
+                        </p><br>
+                    </div>
+
+                    <div>
+                        <form method="post">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label for="secteur">Quel est votre secteur d'activité ?</label><br>
+                                <select class="form-control" id="secteur" name="secteur" required>
+                                    <option value=""></option>
+                                    {% for secteur in secteurs %}
+                                        <option value="{{ secteur.0 }}">{{ secteur.0 }} | {{ secteur.1 }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div><br> 
+
+                            <div class="form-group">
+                                <label for="nb_employes">Combien d'employés possédez-vous ?</label><br>
+                                <input type="number" value=10 class="form-control" id="nb_employes" name="nb_employes" placeholder="Entrer le nombre d'employés" min=0 required><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emploi_crees">Combien d'employés souhaitez-vous embaucher à la suite de votre parrainage ?</label><br>
+                                <input type="number" value=10 class="form-control" id="emploi_crees" name="emploi_crees" placeholder="Entrer le nombre d'emplois créés" min=0 required><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="creation">S'agit-il d'une création d'entreprise ?</label><br>
+                                <select class="form-control" id="creation" name="creation">
+                                <option value="Oui">Oui</option>
+                                <option value="Non">Non</option>
+                            </select><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="franchise">Êtes-vous affilié à une franchise ? Si oui entrez le code franchise, si non entrer 1.</label><br>
+                                <input type="number" value=1 class="form-control" id="franchise" name="franchise" placeholder="Entrer le numéro de franchise, sinon 1" required><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emplacement">Où votre entreprise est-elle située ?</label><br>
+                                <select class="form-control" id="emplacement" name="emplacement">
+                                <option value="Ville">Ville</option>
+                                <option value="Campagne">Campagne</option>
+                                <option value="Indéfini">Indéfini</option>
+                            </select><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="montant">Quel est le montant accordé par votre banque ?</label><br>
+                                <input type="number" value=100000 class="form-control" id="montant" name="montant" placeholder="Entrer le montant" min=0 required><br>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mois">En combien de mois allez-vous rembourser cet emprunt ?</label><br>
+                                <input type="number" value=100 class="form-control" id="mois" name="mois" placeholder="Entrer le nombre de mois" required><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="petit_pret">Faites-vous parti de notre programme de prêt LowDoc ?</label><br>
+                                <select class="form-control" id="petit_pret" name="petit_pret">
+                                    <option value="Non">Non</option>
+                                    <option value="Oui">Oui</option>
+                                </select><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cred_renouvelable">Avez-vous accès au crédit renouvelable ?</label><br>
+                                <select class="form-control" id="cred_renouvelable" name="cred_renouvelable">
+                                    <option value="Non">Non</option>
+                                    <option value="Oui">Oui</option>
+                                </select><br>
+                            </div>
+                            <br>
+
+                            <button type="submit" class="btn btn-primary">Tester mon éligibilité</button>
+                        </form>
+
+                        <p>
+                            {{ prediction }}
+                        </p>
+
+                    </div>
+                </div>
+            <div>        
+        </div>
+    </div>
+
+    
+{% endblock content %}

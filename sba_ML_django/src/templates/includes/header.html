@@ -1,0 +1,43 @@
+{% load static %}
+{% url 'index' as url_index %}
+{% url 'model' as url_model %}
+
+
+<header>
+
+    <div class="navbar shadow-sm">
+
+        <div class="container">
+
+            <a href="{{ url_index }}" class="navbar-brand d-flex align-items-center">
+                <img src="{% static 'images/sba_logo.png' %}" alt="logo de la sba">
+            </a>
+
+            <div class="col-sm-4 offset-md-1 py-4">
+                <ul class="d-flex justify-content-between align-items-center list-unstyled">
+
+                    {% if request.path == url_index %}
+                        <li><a href="{{url_index}}" class="btn btn-primary my-2 primary btn_primary" aria-current="page">Accueil</a></li>
+                    {% else %}
+                        <li><a href="{{url_index}}" class="btn my-2 btn_primary"  aria-current="page">Accueil</a></li>
+                    {% endif %}
+
+                    {% if request.path == url_model %}
+                        <li><a href="{{url_model}}" class="btn btn-primary my-2 primary btn_primary" aria-current="page">Simulateur</a></li>
+                    {% else %}
+                        <li><a href="{{url_model}}" class="btn my-2 btn_primary"  aria-current="page">Simulateur</a></li>
+                    {% endif %}
+
+                    {% if request.path == url_contact %}
+                        <li><a href="{{url_index}}" class="btn btn-primary my-2 primary btn_primary" aria-current="page">Contactez-nous</a></li>
+                    {% else %}
+                        <li><a href="{{url_index}}" class="btn my-2 btn_primary"  aria-current="page">Contactez-nous</a></li>
+                    {% endif %}
+                    
+                </ul>
+
+            </div>
+
+        </div>
+
+</header>

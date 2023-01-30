@@ -1,0 +1,30 @@
+
+
+.primary {
+    background-color: #104794;
+}
+
+
+.btn_primary:hover {
+    background-color: #002E6D;
+    color: white
+}
+
+
+.card-body {
+    height: 200px;
+}
+
+
+.btn-group {
+    position: absolute;
+    margin: 15px auto 0 auto;
+    bottom: 15px;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center {
+    margin: 0 auto;
+}

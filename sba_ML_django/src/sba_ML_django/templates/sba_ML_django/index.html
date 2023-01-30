@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="container-fluid">
+
+    <div>
+        <div class="album py-5 bg-light">
+            <div class="container">
+
+                <div class="container-fluid">
+                    <h1>Bienvenue à la Small Business Administration !</h1><br>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{% static 'images/notes.png' %}" width="70%" height="250" class="center">
+                            <div class="card-body">
+                                <p class="card-text">Vous avez une idée, un projet, mais ne savez pas par où commencer ? 
+                                    Suivez notre Business Plan sur notre site officiel pour créer votre entreprise en toute séreinité.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="https://www.sba.gov/business-guide" type="button"
+                                            class="btn btn-outline-secondary btn_primary">Business Plan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{% static 'images/sac_argent.png' %}" width="100%" height="250">
+                            <div class="card-body">
+                                <p class="card-text">Vous avez déjà fait une estimation de prêt auprès de votre banque?
+                                    Parfait ! Venez donc tester votre éligibilité à notre programme de parrainage SBA.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href={% url 'model' %} type="button"
+                                            class="btn btn-outline-secondary btn_primary">Tester mon éligibilité</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="{% static 'images/enveloppe.png' %}" width="100%" height="250">
+                            <div class="card-body">
+                                <p class="card-text">Vous avez des questions ?
+                                    N'hésitez pas à nous contacter.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href={% url 'model' %} type="button"
+                                            class="btn btn-outline-secondary btn_primary">Nous contacter</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        {% endblock content %}
