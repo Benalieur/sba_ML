@@ -1,6 +1,7 @@
 {% load static %}
 {% url 'index' as url_index %}
 {% url 'model' as url_model %}
+{% url 'contact' as url_contact %}
 
 
 <header>
@@ -29,9 +30,9 @@
                     {% endif %}
 
                     {% if request.path == url_contact %}
-                        <li><a href="{{url_index}}" class="btn btn-primary my-2 primary btn_primary" aria-current="page">Contactez-nous</a></li>
+                        <li><a href="{{url_contact}}" class="btn btn-primary my-2 primary btn_primary" aria-current="page">Contactez-nous</a></li>
                     {% else %}
-                        <li><a href="{{url_index}}" class="btn my-2 btn_primary"  aria-current="page">Contactez-nous</a></li>
+                        <li><a href="{{url_contact}}" class="btn my-2 btn_primary"  aria-current="page">Contactez-nous</a></li>
                     {% endif %}
                     
                 </ul>

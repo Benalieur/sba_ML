@@ -63,10 +63,9 @@ def model(request):
 
         response = requests.post(url, json=data, headers=headers)
 
-        prediction = response.json()
-        prediction = list(prediction['prediction'].keys())[0]
-        prediction = float(prediction)
-        print(prediction)
+        predictions = response.json()
+        prediction = float(list(predictions['prediction'].keys())[0])
+        print(predictions)
 
         if prediction > 0.60:
             return render(request, 'model/model_accept.html')
@@ -75,3 +74,9 @@ def model(request):
 
     else:
         return render(request, 'model/model.html', {'secteurs': secteurs})
+
+
+
+def contact(request):
+
+    return render(request, 'model/contact.html')

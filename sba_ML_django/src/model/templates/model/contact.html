@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        <div>
+            <div class="container">
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <br><h1>Contactez-nous !</h1><br>
+    
+                    <div class="form-group">
+                        <label for="secteur">Nom de famille : </label><br>
+                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer votre nom" required><br>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="secteur">Prénom : </label><br>
+                        <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer votre prénom" required><br>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="secteur">Adresse e-mail : </label><br>
+                        <input type="mail" class="form-control" id="mail" name="mail" placeholder="Entrer votre adresse e-mail" required><br>
+                    </div><br>
+
+                    <div class="form-group">
+                        <label for="secteur">Votre message : </label><br>
+                        <textarea type="text" class="form-control" id="mail" name="mail" placeholder="Entrer votre message" required></textarea><br>
+                    </div><br>
+
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+    
+            </div>
+        </div>
+
+    </div>
+
+    
+{% endblock content %}
