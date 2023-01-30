@@ -67,10 +67,7 @@ def model(request):
         prediction = float(list(predictions['prediction'].keys())[0])
         print(predictions)
 
-        if prediction > 0.60:
-            return render(request, 'model/model_accept.html')
-        else :
-            return render(request, 'model/model_refus.html')
+        return render(request, 'model/model_accept.html', {'prediction': prediction})
 
     else:
         return render(request, 'model/model.html', {'secteurs': secteurs})

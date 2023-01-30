@@ -5,6 +5,12 @@
 }
 
 
+.btn_send {
+    background-color: #002E6D;
+    color: white
+}
+
+
 .btn_primary:hover {
     background-color: #002E6D;
     color: white
