@@ -84,6 +84,7 @@ async def predict(inputs: Inputs):
     df = pd.DataFrame(variables, index=[0])
 
     prediction = model.predict_proba(df)
+    prediction = prediction.json()
 
     return {"prediction": prediction}
 
