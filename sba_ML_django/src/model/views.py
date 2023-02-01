@@ -65,6 +65,7 @@ def model(request):
         print("reponse :", response)
 
         predictions = response.json()
+        print("predictions json :", predictions)
         prediction = float(list(predictions['prediction'].keys())[0])
         print("predictions :", predictions)
 
