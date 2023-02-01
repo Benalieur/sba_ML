@@ -62,10 +62,11 @@ def model(request):
         url = "https://sba-api-nyvs.onrender.com/predict"
 
         response = requests.post(url, json=data, headers=headers)
+        print("reponse :", response)
 
         predictions = response.json()
         prediction = float(list(predictions['prediction'].keys())[0])
-        print(predictions)
+        print("predictions :", predictions)
 
         return render(request, 'model/model_accept.html', {'prediction': prediction})
 
