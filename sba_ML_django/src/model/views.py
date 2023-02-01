@@ -59,7 +59,7 @@ def model(request):
 
         headers = {"Content-Type": "application/json"}
 
-        url = "http://localhost:8080/predict"
+        url = "http://localhost:8000/predict"
 
         response = requests.post(url, json=data, headers=headers)
 
