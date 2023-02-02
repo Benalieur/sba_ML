@@ -61,6 +61,10 @@ def model(request):
 
         url = "https://sba-api-nyvs.onrender.com/predict"
 
+        print("#### data :", data)
+        print("##### url :", url)
+        print("###### headers :", headers)
+
         response = requests.post(url, json=data, headers=headers)
         print("reponse :", response)
 

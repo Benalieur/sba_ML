@@ -86,6 +86,8 @@ async def predict(inputs: Inputs):
     prediction = model.predict_proba(df)
     # prediction = model.predict_proba(df)[0].tolist()
 
+    print("###### prediction :", prediction)
+
     return {"prediction": prediction}
 
 if __name__ == "__main__":
