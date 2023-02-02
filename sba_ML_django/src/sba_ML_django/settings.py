@@ -13,7 +13,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://sba-django-6fhs.onrender.com', 'https://sba-api-nyvs.onrender.com', 'https://sba-api-nyvs.onrender.com/predict', "0.0.0.0"]
+ALLOWED_HOSTS = ['sba-django-6fhs.onrender.com' , 'sba-api-nyvs.onrender.com', 'sba-api-nyvs.onrender.com/predict', "0.0.0.0"]
 
 
 # Application definition
