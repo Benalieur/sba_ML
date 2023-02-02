@@ -84,7 +84,7 @@ async def predict(inputs: Inputs):
     df = pd.DataFrame(variables, index=[0])
 
     prediction = model.predict_proba(df)
-    prediction = model.predict_proba(df)[0].tolist()
+    # prediction = model.predict_proba(df)[0].tolist()
 
     return {"prediction": prediction}
 
