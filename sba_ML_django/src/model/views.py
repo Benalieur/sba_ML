@@ -42,7 +42,6 @@ def model(request):
         petit_pret = request.POST.get('petit_pret')
         montant = request.POST.get('montant')
         secteur = request.POST.get('secteur')
-        secure = request.POST.get('secure')
         data = {
             'mois': mois,
             'nb_employes': nb_employes,
@@ -53,8 +52,7 @@ def model(request):
             'cred_renouvelable': cred_renouvelable,
             'petit_pret': petit_pret,
             'montant': montant,
-            'secteur': secteur,
-            'secure': secure
+            'secteur': secteur
         }
 
         headers = {"Content-Type": "application/json"}
