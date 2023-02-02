@@ -23,7 +23,7 @@ class Inputs(BaseModel):
 
 @app.post("/predict")
 async def predict(inputs: Inputs):
-    model = joblib.load('sba_ML_Fastapi/models/GradientBoostingClassifier.pkl')
+    model = joblib.load('models/GradientBoostingClassifier.pkl')
 
     mois = inputs.mois
     nb_employes = inputs.nb_employes
