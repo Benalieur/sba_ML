@@ -59,7 +59,7 @@ def model(request):
 
         headers = {"Content-Type": "application/json"}
 
-        url = "https://sba-api-nyvs.onrender.com/predict/"
+        url = "https://sba-api-nyvs.onrender.com/predict"
 
         response = requests.post(url, json=data, headers=headers)
         print("reponse :", response)

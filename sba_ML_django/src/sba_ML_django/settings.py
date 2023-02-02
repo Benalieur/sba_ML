@@ -118,4 +118,4 @@ STATICFILES_DIRS = [BASE_DIR / 'static/']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://sba-django-6fhs.onrender.com', 'https://sba-api-nyvs.onrender.com', 'https://sba-api-nyvs.onrender.com/predict']
